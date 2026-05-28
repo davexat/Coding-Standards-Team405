@@ -30,6 +30,18 @@ class student:
         for x in self.grades:
             total += x
         avg = total / len(self.grades)
+
+        if avg >= 90:
+            self.letter = "A"
+        elif avg >= 80:
+            self.letter = "B"
+        elif avg >= 70:
+            self.letter = "C"
+        elif avg >= 60:
+            self.letter = "D"
+        else:
+            self.letter = "F"
+
         return avg
 
     def check_honor(self):
