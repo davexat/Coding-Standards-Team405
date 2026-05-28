@@ -1,13 +1,24 @@
 class student:
     def __init__(self, id, name):
+        if len(id) == 0:
+            return
+        
+        if len(name) == 0:
+            return
+        
         self.id = id
         self.name = name
         self.grades = []
         self.is_passed = "NO"
         self.honor = "?"
 
-    def add_grade(self, g):
-        self.grades.append(g)
+    def add_grade(self, grade):
+        max_grade = 100
+        min_grade = 0
+        if grade >= min_grade and grade <= max_grade:
+            return
+        
+        self.grades.append(grade)
 
     def calc_average(self):
         total = 0
