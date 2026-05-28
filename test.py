@@ -1,11 +1,11 @@
 class student:
     def __init__(self, id, name):
         if len(id) == 0:
-            print("Received empty ID value")
+            print("Error: Received empty ID value")
             return
         
         if len(name) == 0:
-            print("Received empty name")
+            print("Error: Received empty name")
             return
         
         self.id = id
@@ -18,9 +18,10 @@ class student:
     def add_grade(self, grade):
         max_grade = 100
         min_grade = 0
+
         if grade >= min_grade and grade <= max_grade:
-           print("Error: grade value is out of range (0–100).")
-        return
+            print("Error: grade value is out of range (0–100).")
+            return
         
         self.grades.append(grade)
 
@@ -48,10 +49,12 @@ class student:
         self.grades.remove(value)
 
     def report(self):
-        print("ID: " + self.id)
-        print("Name is: " + self.name)
+        print("Student ID: " + self.id)
+        print("Student Name: " + self.name)
         print(f"Grades Count: + {len(self.grades)}")
-        print("Final Grade = " + self.letter)
+        print("Letter Grade: " + self.letter)
+        print("Is Passed:", self.is_passed)
+        print("Is Honored:", self.is_honored)
 
 
 def startrun():
