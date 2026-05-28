@@ -20,7 +20,7 @@ class student:
         min_grade = 0
 
         if grade >= min_grade and grade <= max_grade:
-            print("Error: grade value is out of range (0–100).")
+            print("Error: grade value is out of range")
             return
         
         self.grades.append(grade)
@@ -38,12 +38,14 @@ class student:
 
     def delete_grade_by_index(self, index):
         if index >= len(self.grades) or index < 0:
+            print("Error: grade index is out of range")
             return
         
         del self.grades[index]
 
     def delete_grade_by_value(self, value):
         if value not in self.grades:
+            print("Error: grade value does not exists")
             return
         
         self.grades.remove(value)
