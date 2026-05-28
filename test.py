@@ -1,9 +1,11 @@
 class student:
     def __init__(self, id, name):
         if len(id) == 0:
+            print("Received empty ID value")
             return
         
         if len(name) == 0:
+            print("Received empty name")
             return
         
         self.id = id
@@ -17,7 +19,8 @@ class student:
         max_grade = 100
         min_grade = 0
         if grade >= min_grade and grade <= max_grade:
-            return
+           print("Error: grade value is out of range (0–100).")
+        return
         
         self.grades.append(grade)
 
